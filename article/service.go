@@ -14,6 +14,7 @@ import (
 //
 //go:generate mockery --name ArticleRepository
 type ArticleRepository interface {
+	
 	Fetch(ctx context.Context, cursor string, num int64) (res []domain.Article, nextCursor string, err error)
 	GetByID(ctx context.Context, id int64) (domain.Article, error)
 	GetByTitle(ctx context.Context, title string) (domain.Article, error)
